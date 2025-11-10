@@ -1,0 +1,52 @@
+nav {
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-accent);
+    font-family: var(--font-family-base);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+nav h1 {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+nav div {
+    display: flex;
+    gap: 10px;
+}
+
+nav div button:first-child {
+    color: var(--color-text-red);
+}
+
+nav button {
+    background-color: var(--color-text-light);
+    color: var(--color-accent);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+nav button:hover {
+  background-color: var(--color-text-light);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+nav button:active {
+    opacity: 0.9;
+}

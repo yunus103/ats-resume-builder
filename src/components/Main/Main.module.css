@@ -1,0 +1,88 @@
+/* ===== Main: 2 columns ===== */
+main {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* left: form, right: preview */
+  gap: 2rem;
+  padding: 2rem 1rem;
+  align-items: start;
+}
+
+/* ===== Form: 2 columns of fieldsets ===== */
+form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2 cols when enough width */
+  gap: 1.5rem 2rem;
+  align-content: start;
+}
+
+form > * {
+  min-width: 0; /* prevent overflow */
+}
+
+/* ===== Fieldset block ===== */
+fieldset {
+  border: none;
+  border-radius: 12px;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+  width: 100%;
+}
+
+fieldset div {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Inputs ===== */
+label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fafafa;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-accent, #4f46e5);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(79,70,229,.15);
+}
+
+/* ===== Right column (preview / resume) ===== */
+.resume {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.05);
+  align-self: start;
+}
+
+/* ===== Responsive breakpoints ===== */
+@media (max-width: 1200px) {
+  form {
+    grid-template-columns: 1fr; /* stack fieldsets */
+  }
+}
+
+@media (max-width: 1000px) {
+  main {
+    grid-template-columns: 1fr; /* form above preview */
+  }
+
+  form {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
