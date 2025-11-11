@@ -1,16 +1,33 @@
-# React + Vite
+# ATS Resume Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight resume builder built with React and Vite. It helps you collect personal details, work experience, education, skills, and certificates, then renders the data as a clean resume preview. Form entries are saved to `localStorage` so you can refresh the page without losing progress.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open the link printed in the terminal (usually <http://localhost:5173>) to use the app.
 
-## React Compiler
+## Available Scripts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `npm run dev` – launches Vite in development mode with hot reloading.
+- `npm run build` – builds the production assets.
+- `npm run preview` – serves the production build locally for inspection.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Guided forms for personal information, experience, education, skills, and certificates.
+- Automatic persistence via browser `localStorage`.
+- Live resume preview that updates as you type.
+
+## Tech Stack
+
+- React
+- Vite
+- CSS Modules
