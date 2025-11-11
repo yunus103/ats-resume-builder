@@ -3,7 +3,7 @@ import styles from "./Form.module.css";
 import { IoIosArrowDown, IoIosArrowUp, IoIosAddCircleOutline } from "react-icons/io";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-function Education({ onChange, data, onReset }) {
+function Education({ onChange, data, onReset, onSave }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isAdding, setIsAdding] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -23,6 +23,9 @@ function Education({ onChange, data, onReset }) {
   // ✅ items değişince kaydet
   useEffect(() => {
     localStorage.setItem("educationItems", JSON.stringify(items));
+    if (items.length >= 0) {
+        onSave();
+    }
   }, [items]);
 
   const handleIsAdding = (e) => {

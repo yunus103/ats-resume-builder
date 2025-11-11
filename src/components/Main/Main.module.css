@@ -94,3 +94,104 @@ input:focus {
     grid-template-columns: 1fr;
   }
 }
+
+
+.resume {
+  background: #fff;
+  color: #222;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+.header .subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+.header .subtitle a {
+  color: var(--color-accent, #4f46e5);
+  text-decoration: none;
+}
+
+/* Section Titles */
+.section {
+  margin-bottom: 1.5rem;
+}
+.section h2 {
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+/* Experience / Education / Certificates */
+.item {
+  margin-bottom: 0.9rem;
+}
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itemHeader h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+.date {
+  font-size: 0.85rem;
+  color: #777;
+}
+.title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+  margin: 0.2rem 0;
+}
+.tasks {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Skills */
+.skillGroup {
+  margin-bottom: 1rem;
+}
+.badgeGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.badge {
+  background: #eef2ff;
+  color: #333;
+  padding: 0.25rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+/* Placeholder */
+.placeholder {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+}
+
+
+

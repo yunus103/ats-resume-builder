@@ -37,3 +37,23 @@ h4, h5 {
     font-size: var(--font-size-subheading);
     color: var(--color-text);
 }
+
+/* Yazdırma için */
+@media print {
+  form, .no-print, nav {
+    display: none !important;
+  }
+  .resume {
+    width: auto;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 1.5cm;
+  }
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}

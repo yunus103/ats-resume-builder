@@ -3,7 +3,7 @@ import styles from "./Form.module.css";
 import { IoIosArrowDown, IoIosArrowUp, IoIosAddCircleOutline } from "react-icons/io";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-function Certificates({ onChange, data, onReset }) {
+function Certificates({ onChange, data, onReset, onSave }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isAdding, setIsAdding] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -21,6 +21,9 @@ function Certificates({ onChange, data, onReset }) {
 
   useEffect(() => {
     localStorage.setItem("certificateItems", JSON.stringify(items));
+    if (items.length >= 0) {
+        onSave();
+    }
   }, [items]);
 
   const handleIsOpen = () => setIsOpen((prev) => !prev);
