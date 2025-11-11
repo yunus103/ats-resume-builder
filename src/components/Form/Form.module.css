@@ -15,6 +15,13 @@
 	align-items: center;
 }
 
+.error {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
 .btnExpand {
   background: none;
   border: none;
@@ -40,5 +47,203 @@
 }
 
 .expandable.open {
-	max-height: 500px;
+	max-height: fit-content;
+}
+
+.wrapper {
+	margin-bottom: 1rem;
+}
+
+.btnAdd {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	font-size: 1.1rem;
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 100%;
+	padding: 0.5rem 0;
+	border-radius: 10px;
+	background: none;
+	cursor: pointer;
+	border: 2px solid transparent; /* Define a transparent border initially */
+  color: #333; /* Assuming a default text color */
+  transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+}
+
+.btnAdd:hover {
+	background-color: rgba(94, 150, 240, 0.1); 
+  border-color: var(--color-accent); 
+  color: #5e96f0; 
+  box-shadow: 0 4px 12px rgba(94, 150, 240, 0.1); 
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+.btnAdd:active {
+	transform: scale(0.95);
+}
+
+.btnSave {
+	display: block;
+	margin-left: auto;
+	margin-right: .5rem;
+	background: var(--color-accent);
+	color: #fff;
+	padding: 0.5rem 0.7rem;
+	border: none;
+	border-radius: 5px 5px 5px 5px;
+	cursor: pointer;
+	font-size: 0.9rem;
+	transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btnSave:hover {
+	filter: brightness(0.9);
+  transform: translateY(-1px); 
+}
+
+.btnSave:active {
+	transform: scale(0.95);
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.experienceItem {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.experienceItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* sol taraf: şirket info */
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.itemInfo h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.itemInfo span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* sağ taraf: ikon butonlar */
+.itemActions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.itemActions button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.itemActions button:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.05);
+}
+
+/* delete ikonu için renk */
+.itemActions .delete {
+  color: #d32f2f;
+}
+
+.itemActions .delete:hover {
+  background-color: rgba(211, 47, 47, 0.1);
+}
+
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.skillTag {
+  background-color: #f1f3f9;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.skillTag button.deleteSmall {
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 0.9rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.skillTag button.deleteSmall:hover {
+  color: #e74c3c;
+}
+
+/* Inline skill ekleme alanı */
+.addSkillInline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  width: 100%; /* 🔥 input alanını genişletir */
+}
+
+.addSkillInline input {
+  flex: 1;
+  min-width: 180px; /* 🔥 sıkışmayı engeller */
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+.addSkillInline button {
+  flex-shrink: 0; /* 🔥 butonun boyu sabit kalır */
+  padding: 0.45rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--color-accent, #4f46e5);
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.addSkillInline button:hover {
+  background-color: #4338ca;
 }
