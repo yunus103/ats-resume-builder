@@ -1,18 +1,45 @@
+
 .card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 1rem 1rem 0rem 0.9rem;
-	display: flex;
+  position: relative;
+  background: var(--color-surface);
+  border-radius: 18px;
+  padding: 1.2rem 1.35rem 0.75rem;
+  display: flex;
   flex-direction: column;
   align-items: stretch;
-	transition: box-shadow 0.2s ease;
-	height: fit-content;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 24px 48px -30px rgba(15, 23, 42, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(120deg, rgba(59, 130, 246, 0.6), rgba(37, 99, 235, 0.3));
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 28px 55px -32px rgba(15, 23, 42, 0.65);
 }
 
 .fieldHeader {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.fieldHeader h1 {
+  font-size: 1.2rem;
+  color: var(--color-text);
 }
 
 .error {
@@ -22,22 +49,25 @@
   font-weight: 500;
 }
 
+
 .btnExpand {
-  background: none;
-  border: none;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   outline: none;
   cursor: pointer;
-	font-size: 1.6rem;
-	border-radius: 50%;
-	padding: 3px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: var(--color-accent);
+  font-size: 1.45rem;
+  border-radius: 50%;
+  padding: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-accent-strong);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btnExpand:hover {
-	opacity: 0.9;
+  transform: translateY(-1px);
+  background: rgba(37, 99, 235, 0.18);
 }
 
 .expandable {
@@ -51,60 +81,69 @@
 }
 
 .wrapper {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
+
 .btnAdd {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	font-size: 1.1rem;
-	margin: 0 auto;
-	margin-top: 10px;
-	width: 100%;
-	padding: 0.5rem 0;
-	border-radius: 10px;
-	background: none;
-	cursor: pointer;
-	border: 2px solid transparent; /* Define a transparent border initially */
-  color: #333; /* Assuming a default text color */
-  transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.05rem;
+  margin: 0 auto;
+  margin-top: 0.75rem;
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.08);
+  cursor: pointer;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: var(--color-accent-strong);
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .btnAdd:hover {
-	background-color: rgba(94, 150, 240, 0.1); 
-  border-color: var(--color-accent); 
-  color: #5e96f0; 
-  box-shadow: 0 4px 12px rgba(94, 150, 240, 0.1); 
-  transform: translateY(-1px); /* Slight lift effect */
+  background: rgba(59, 130, 246, 0.16);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 14px 30px -20px rgba(37, 99, 235, 0.6);
+  transform: translateY(-1px);
 }
 
 .btnAdd:active {
-	transform: scale(0.95);
+  transform: scale(0.98);
 }
 
+
 .btnSave {
-	display: block;
-	margin-left: auto;
-	margin-right: .5rem;
-	background: var(--color-accent);
-	color: #fff;
-	padding: 0.5rem 0.7rem;
-	border: none;
-	border-radius: 5px 5px 5px 5px;
-	cursor: pointer;
-	font-size: 0.9rem;
-	transition: background-color 0.2s ease, transform 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-left: auto;
+  margin-right: 0.65rem;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+  color: #fff;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 14px 32px -18px rgba(37, 99, 235, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .btnSave:hover {
-	filter: brightness(0.9);
-  transform: translateY(-1px); 
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 18px 34px -18px rgba(37, 99, 235, 0.7);
 }
 
 .btnSave:active {
-	transform: scale(0.95);
+  transform: translateY(0);
+  box-shadow: 0 12px 24px -18px rgba(37, 99, 235, 0.45);
 }
 
 .experienceList {
@@ -114,20 +153,21 @@
   margin-top: 1rem;
 }
 
+
 .experienceItem {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: rgba(248, 250, 252, 0.85);
+  border-radius: 12px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
   padding: 0.8rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .experienceItem:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 22px -18px rgba(15, 23, 42, 0.5);
 }
 
 /* sol taraf: şirket info */
@@ -140,12 +180,12 @@
 .itemInfo h4 {
   font-size: 1rem;
   font-weight: 600;
-  color: #333;
+  color: var(--color-text);
 }
 
 .itemInfo span {
   font-size: 0.9rem;
-  color: #777;
+  color: var(--color-text-muted);
 }
 
 /* sağ taraf: ikon butonlar */
@@ -167,8 +207,9 @@
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
+
 .itemActions button:hover {
-  background-color: #f2f2f2;
+  background-color: rgba(226, 232, 240, 0.7);
   transform: scale(1.05);
 }
 
@@ -178,7 +219,7 @@
 }
 
 .itemActions .delete:hover {
-  background-color: rgba(211, 47, 47, 0.1);
+  background-color: rgba(239, 68, 68, 0.12);
 }
 
 
@@ -189,15 +230,17 @@
   margin-bottom: 0.6rem;
 }
 
+
 .skillTag {
-  background-color: #f1f3f9;
-  border-radius: 6px;
-  padding: 0.3rem 0.6rem;
-  font-size: 0.85rem;
-  color: #333;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.82rem;
+  color: var(--color-accent-strong);
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .skillTag button.deleteSmall {
@@ -226,24 +269,28 @@
 .addSkillInline input {
   flex: 1;
   min-width: 180px; /* 🔥 sıkışmayı engeller */
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  border: 1px solid #ddd;
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
   font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.95);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .addSkillInline button {
   flex-shrink: 0; /* 🔥 butonun boyu sabit kalır */
-  padding: 0.45rem 1rem;
+  padding: 0.5rem 1.05rem;
   border: none;
-  border-radius: 6px;
-  background-color: var(--color-accent, #4f46e5);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
   color: white;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: background 0.2s ease;
+  font-weight: 600;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .addSkillInline button:hover {
-  background-color: #4338ca;
+  transform: translateY(-1px);
+  filter: brightness(1.05);
 }

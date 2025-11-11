@@ -4,10 +4,10 @@ import Main from "./components/Main/Main";
 
 function App() {
   return (
-    <>
-        <Nav></Nav>
-        <Main></Main>
-    </>
+    <div className="appShell">
+      <Nav></Nav>
+      <Main></Main>
+    </div>
   );
 }
 

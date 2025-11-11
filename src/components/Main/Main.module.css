@@ -2,9 +2,15 @@
 main {
   display: grid;
   grid-template-columns: 1.1fr 1fr; /* left: form, right: preview */
-  gap: 2rem;
-  padding: 2rem 1rem;
+  gap: 2.25rem;
+  padding: 2.25rem 1.25rem;
   align-items: start;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 28px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 30px 70px -60px rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 /* ===== Form: 2 columns of fieldsets ===== */
@@ -14,7 +20,7 @@ form {
     2,
     minmax(300px, 1fr)
   ); /* 2 cols when enough width */
-  gap: 1.5rem 2rem;
+  gap: 1.75rem 2rem;
   align-content: start;
 }
 
@@ -26,8 +32,8 @@ form > * {
 fieldset {
   border: none;
   border-radius: 12px;
-  margin-top: 1rem;
-  padding-left: 0.5rem;
+  margin-top: 0.75rem;
+  padding-left: 0.25rem;
   width: 100%;
 }
 
@@ -41,34 +47,37 @@ fieldset div {
 /* ===== Inputs ===== */
 label {
   font-size: 1rem;
-  font-weight: 500;
-  color: #444;
+  font-weight: 600;
+  color: var(--color-text);
 }
 
 input {
   padding: 0.7rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 12px;
   font-size: 0.95rem;
-  background: #fafafa;
+  background: rgba(255, 255, 255, 0.95);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   width: 100%;
   box-sizing: border-box;
+  color: var(--color-text);
 }
 
 input:focus {
   outline: none;
-  border-color: var(--color-accent, #4f46e5);
+  border-color: rgba(37, 99, 235, 0.65);
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
 }
 
 /* ===== Right column (preview / resume) ===== */
 .resume {
-  background: #fff;
-  padding: 1.25rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: radial-gradient(circle at top, rgba(59, 130, 246, 0.1), transparent 55%),
+    var(--color-surface-strong);
+  padding: 2rem 2.2rem;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px -35px rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.25);
   align-self: start;
 }
 
@@ -95,49 +104,76 @@ input:focus {
   }
 }
 
+@media print {
+  main {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+}
+
 
 .resume {
-  background: #fff;
+  background: radial-gradient(circle at top, rgba(59, 130, 246, 0.1), transparent 55%),
+    var(--color-surface-strong);
   color: #222;
   width: 100%;
   margin: 2rem auto;
-  padding: 2rem 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  padding: 2.2rem 2.65rem;
+  border-radius: 24px;
+  box-shadow: 0 28px 70px -40px rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 /* Header */
 .header {
   text-align: center;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 0.8rem;
-  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(226, 232, 240, 0.7);
+  padding-bottom: 1rem;
+  margin-bottom: 1.75rem;
 }
 .header h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin: 0;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
 }
 .header .subtitle {
-  color: #666;
-  font-size: 0.95rem;
-  margin-top: 0.2rem;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-top: 0.35rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
 }
 .header .subtitle a {
-  color: var(--color-accent, #4f46e5);
+  color: var(--color-accent-strong);
   text-decoration: none;
 }
 
 /* Section Titles */
 .section {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 .section h2 {
-  font-size: 1.2rem;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.8rem;
-  color: #333;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.section h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.4), transparent);
 }
 
 /* Experience / Education / Certificates */
@@ -148,25 +184,29 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
 }
 .itemHeader h3 {
-  font-size: 1rem;
+  font-size: 1.05rem;
   margin: 0;
+  color: var(--color-text);
 }
 .date {
   font-size: 0.85rem;
-  color: #777;
+  color: var(--color-text-muted);
+  font-weight: 500;
 }
 .title {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #444;
-  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0.35rem 0 0.25rem;
 }
 .tasks {
-  font-size: 0.85rem;
-  color: #555;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
   margin: 0;
+  line-height: 1.5;
 }
 
 /* Skills */
@@ -179,11 +219,13 @@ input:focus {
   gap: 0.4rem;
 }
 .badge {
-  background: #eef2ff;
-  color: #333;
-  padding: 0.25rem 0.6rem;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  background: rgba(59, 130, 246, 0.14);
+  color: var(--color-accent-strong);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 /* Placeholder */
